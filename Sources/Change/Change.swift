@@ -2,7 +2,9 @@ import Foundation
 
 struct Change: Codable {
     let path: String
-    let changeStatus: ChangeStatus
+    let status: ChangeStatus
+    let additions: Int
+    let deletions: Int
 }
 
 extension Change {
@@ -24,8 +26,7 @@ extension Change {
 
         let changes: [Change] = rawLines.compactMap { rawLine in
             if let numstatLine = numstatLines.first(where: { $0.path == rawLine.path }) {
-                let changeStatus = ChangeStatus(status: rawLine.status, additions: numstatLine.additions, deletions: numstatLine.deletions)
-                return Change(path: rawLine.path, changeStatus: changeStatus)
+                return Change(path: rawLine.path, status: rawLine.status, additions: numstatLine.additions, deletions: numstatLine.deletions)
             }
             return nil
         }

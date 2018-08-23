@@ -1,7 +1,5 @@
-import Foundation
-
-struct ChangeStatus: Codable {
-    let status: FileStatus
-    let additions: Int
-    let deletions: Int
+enum ChangeStatus: String, Codable {
+    case added = "A"
+    case deleted = "D"
+    case modified = "M"
 }

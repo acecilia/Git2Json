@@ -10,8 +10,7 @@
 		413F932F212EE1CF0092E960 /* Git2JsonFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 413F932D212EE1CF0092E960 /* Git2JsonFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		413F933A212EE1E80092E960 /* ChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F9339212EE1E80092E960 /* ChangeTests.swift */; };
 		413F933C212EE1E80092E960 /* Git2Json.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 413F932A212EE1CF0092E960 /* Git2Json.framework */; };
-		413F9351212EE2400092E960 /* FileStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F9344212EE23F0092E960 /* FileStatus.swift */; };
-		413F9352212EE2400092E960 /* ChangeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F9345212EE23F0092E960 /* ChangeStatus.swift */; };
+		413F9351212EE2400092E960 /* ChangeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F9344212EE23F0092E960 /* ChangeStatus.swift */; };
 		413F9353212EE2400092E960 /* RawLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F9346212EE23F0092E960 /* RawLine.swift */; };
 		413F9354212EE2400092E960 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F9347212EE23F0092E960 /* Change.swift */; };
 		413F9355212EE2400092E960 /* NumstatLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F9348212EE23F0092E960 /* NumstatLine.swift */; };
@@ -44,8 +43,7 @@
 		413F9337212EE1E80092E960 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		413F9339212EE1E80092E960 /* ChangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeTests.swift; sourceTree = "<group>"; };
 		413F933B212EE1E80092E960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		413F9344212EE23F0092E960 /* FileStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileStatus.swift; sourceTree = "<group>"; };
-		413F9345212EE23F0092E960 /* ChangeStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeStatus.swift; sourceTree = "<group>"; };
+		413F9344212EE23F0092E960 /* ChangeStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeStatus.swift; sourceTree = "<group>"; };
 		413F9346212EE23F0092E960 /* RawLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawLine.swift; sourceTree = "<group>"; };
 		413F9347212EE23F0092E960 /* Change.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Change.swift; sourceTree = "<group>"; };
 		413F9348212EE23F0092E960 /* NumstatLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumstatLine.swift; sourceTree = "<group>"; };
@@ -135,8 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				413F9347212EE23F0092E960 /* Change.swift */,
-				413F9345212EE23F0092E960 /* ChangeStatus.swift */,
-				413F9344212EE23F0092E960 /* FileStatus.swift */,
+				413F9344212EE23F0092E960 /* ChangeStatus.swift */,
 				413F9348212EE23F0092E960 /* NumstatLine.swift */,
 				413F9346212EE23F0092E960 /* RawLine.swift */,
 			);
@@ -311,8 +308,7 @@
 				413F9357212EE2400092E960 /* Commit.swift in Sources */,
 				413F9358212EE2400092E960 /* String+split.swift in Sources */,
 				413F9354212EE2400092E960 /* Change.swift in Sources */,
-				413F9351212EE2400092E960 /* FileStatus.swift in Sources */,
-				413F9352212EE2400092E960 /* ChangeStatus.swift in Sources */,
+				413F9351212EE2400092E960 /* ChangeStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

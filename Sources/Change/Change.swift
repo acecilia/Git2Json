@@ -7,7 +7,7 @@ struct Change: Codable {
 
 extension Change {
 
-    /// Parse a group of raw or numstat lines (as coming from executing <git log --raw --numstat>)
+    /// Parse a group of raw and numstat lines (as coming from executing <git log --raw --numstat>)
     /// Example:
     /// :100755 100755 328b5ad... 6e4d50f... M  Sources/UIStackView+initializers.swift
     /// 4       4       Sources/UIStackView+initializers.swift

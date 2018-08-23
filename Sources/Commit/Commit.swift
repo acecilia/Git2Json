@@ -38,7 +38,7 @@ extension Commit {
 }
 
 extension Commit {
-    static func decodeMultiple(from string: String, separator: String = Commit.separator, allowMalformedElement: Bool = false) throws -> [Commit] {
+    static func decodeMultiple(from string: String, separator: String = Commit.separator) throws -> [Commit] {
         let commits = string.filteredComponents(separatedBy: separator)
         return try commits.map { try Commit(from: $0) }
     }

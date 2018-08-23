@@ -14,10 +14,9 @@ extension Change {
     ///
     /// - Parameters:
     ///   - string: The string with the raw and numstat lines.
-    ///   - allowMalformedElement: If intermediate decoding errors are allowed.
     /// - Returns: An array of successfully decoded changes.
     /// - Throws: A decoding error.
-    static func decodeMultiple(from string: String, allowMalformedElement: Bool = false) throws -> [Change] {
+    static func decodeMultiple(from string: String) throws -> [Change] {
         let changeStrings = string.filteredComponents(separatedBy: "\n")
 
         let rawLines = changeStrings.compactMap { try? RawLine($0) }
@@ -31,7 +30,7 @@ extension Change {
             return nil
         }
 
-        if !allowMalformedElement, changeStrings.count != changes.count * 2 {
+        if changeStrings.count != changes.count * 2 {
             let context = DecodingError.Context(codingPath: [], debugDescription: "The string could not be fully decoded because some of its content is malformed. String: \"\(string)\".")
             throw DecodingError.dataCorrupted(context)
         }

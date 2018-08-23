@@ -1,5 +1,3 @@
-import Foundation
-
 struct Change: Codable {
     let path: String
     let status: ChangeStatus

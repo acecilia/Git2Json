@@ -1,5 +1,3 @@
-import Foundation
-
 struct RawLine: Codable {
     let path: String
     let status: ChangeStatus

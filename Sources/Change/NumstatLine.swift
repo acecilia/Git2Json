@@ -1,5 +1,3 @@
-import Foundation
-
 struct NumstatLine: Codable {
     let path: String
     let additions: Int

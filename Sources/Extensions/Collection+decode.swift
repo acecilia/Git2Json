@@ -1,5 +1,3 @@
-import Foundation
-
 extension Collection {
     func decode<T, IndexType: RawRepresentable>(key: CodingKey, at index: IndexType) throws -> T where IndexType.RawValue == Index, Element == T {
         return try self.decode(key: key, at: index, map: { $0 })

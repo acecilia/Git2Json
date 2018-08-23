@@ -2,6 +2,7 @@ import XCTest
 @testable import Git2Json
 
 class CommitTests: XCTestCase {
+    
     func testValidCommit() throws {
         let commit = try Commit(from: UnitTestsDataSource.ValidCommitLogs.defaultOutput)
         XCTAssertEqual("Andrés Cecilia Luque", commit.metadata.authorName)

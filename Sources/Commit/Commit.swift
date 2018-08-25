@@ -6,6 +6,12 @@ struct Commit: Codable {
 }
 
 extension Commit {
+    static var gitPrettyFormat: String {
+        return "\(separator)%n\(CommitMetadata.gitPrettyFormat)%n\(sectionsSeparator)%n"
+    }
+}
+
+extension Commit {
     private static let separator = "---"
     private static let sectionsSeparator = "###"
 
@@ -13,10 +19,7 @@ extension Commit {
         case hash, author, subject
     }
 
-    /// Decode a Commit object from a string, which is the output of the following command:
-    /// ````
-    /// git log --raw --numstat --pretty='---%n{%n"hash":"%H",%n"authorName":"%an",%n"subject":"%s"%n}%n###%n'
-    /// ````
+    /// Decode a Commit object from a string, which is the output of the git command.
     ///
     /// - Parameters:
     ///   - string: The command output.

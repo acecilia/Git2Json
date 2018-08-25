@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41385DC821319F4700E769A8 /* Git.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41385DC721319F4700E769A8 /* Git.swift */; };
+		41385DCA21319F9800E769A8 /* GitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41385DC921319F9800E769A8 /* GitTests.swift */; };
 		413F932F212EE1CF0092E960 /* Git2JsonFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 413F932D212EE1CF0092E960 /* Git2JsonFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		413F933A212EE1E80092E960 /* ChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F9339212EE1E80092E960 /* ChangeTests.swift */; };
 		413F933C212EE1E80092E960 /* Git2Json.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 413F932A212EE1CF0092E960 /* Git2Json.framework */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41385DC721319F4700E769A8 /* Git.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Git.swift; sourceTree = "<group>"; };
+		41385DC921319F9800E769A8 /* GitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTests.swift; sourceTree = "<group>"; };
 		413F932A212EE1CF0092E960 /* Git2Json.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Git2Json.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		413F932D212EE1CF0092E960 /* Git2JsonFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Git2JsonFramework.h; sourceTree = "<group>"; };
 		413F932E212EE1CF0092E960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41385DC621319F3900E769A8 /* Git */ = {
+			isa = PBXGroup;
+			children = (
+				41385DC721319F4700E769A8 /* Git.swift */,
+			);
+			path = Git;
+			sourceTree = "<group>";
+		};
 		413F931E212EE1BA0092E960 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +125,7 @@
 				413F935D212EE78A0092E960 /* Helpers */,
 				413F9339212EE1E80092E960 /* ChangeTests.swift */,
 				413F936B212F0A9B0092E960 /* CommitTests.swift */,
+				41385DC921319F9800E769A8 /* GitTests.swift */,
 				413F933B212EE1E80092E960 /* Info.plist */,
 			);
 			path = UnitTests;
@@ -121,6 +134,7 @@
 		413F9342212EE2270092E960 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				41385DC621319F3900E769A8 /* Git */,
 				413F9343212EE23F0092E960 /* Change */,
 				413F935C212EE3650092E960 /* Commit */,
 				413F934C212EE23F0092E960 /* Extensions */,
@@ -304,6 +318,7 @@
 				413F9353212EE2400092E960 /* RawLine.swift in Sources */,
 				413F9359212EE2400092E960 /* Collection+safeSubscript.swift in Sources */,
 				41CC3508212F11A400EADFE7 /* CommitMetadata.swift in Sources */,
+				41385DC821319F4700E769A8 /* Git.swift in Sources */,
 				413F935A212EE2400092E960 /* Collection+decode.swift in Sources */,
 				413F9357212EE2400092E960 /* Commit.swift in Sources */,
 				413F9358212EE2400092E960 /* String+split.swift in Sources */,
@@ -321,6 +336,7 @@
 				413F9362212EECA30092E960 /* ValidCommitLogs.swift in Sources */,
 				413F936C212F0A9B0092E960 /* CommitTests.swift in Sources */,
 				413F933A212EE1E80092E960 /* ChangeTests.swift in Sources */,
+				41385DCA21319F9800E769A8 /* GitTests.swift in Sources */,
 				413F936E212F0BB50092E960 /* ValidMultipleCommitLogs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

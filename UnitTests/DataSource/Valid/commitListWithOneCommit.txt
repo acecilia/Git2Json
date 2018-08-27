@@ -1,0 +1,11 @@
+---
+{
+"hash":"3995ff9acfb25812ca4ad9b835d457e2e1cbe75e",
+"authorName":"Theophane RUPIN",
+"subject":"Added Weaver to the list of projects using Stencil"
+}
+###
+
+
+:100644 100644 290ccce... 75ce68b... M  README.md
+2       1       README.md

@@ -10,7 +10,7 @@ class DataSourceTests: XCTestCase {
         for element in UnitTestsDataSource.Valid.allCases {
             switch element {
             case .commitListWithOneCommit:
-                let commands = ["git --no-pager log", Git.logOptions, "4f27163903eab8aec0b8c77b06e9573253bb60db", "-1"]
+                let commands = ["git --no-pager log", Git.logOptions, "fe749215d7d9a038e18ecde588d3c859374caa99", "-1"]
                 let command = commands.joined(separator: " ")
                 let output = context.run(bash: command).stdout
                 try! output.write(to: element.txtFilePath, atomically: false, encoding: .utf8)

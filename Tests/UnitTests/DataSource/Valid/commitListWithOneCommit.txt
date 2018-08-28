@@ -1,11 +1,19 @@
 ---
 {
-"hash":"3995ff9acfb25812ca4ad9b835d457e2e1cbe75e",
-"authorName":"Theophane RUPIN",
-"subject":"Added Weaver to the list of projects using Stencil"
+  "authorName" : "Andrés Cecilia Luque",
+  "hash" : "fe749215d7d9a038e18ecde588d3c859374caa99",
+  "subject" : "Added git command generator"
 }
 ###
 
 
-:100644 100644 290ccce... 75ce68b... M  README.md
-2       1       README.md
+:100644 100644 5095e5d... 808c679... M	Git2Json.xcodeproj/project.pbxproj
+:100644 100644 7bab5c2... 237f3d5... M	Sources/Commit/Commit.swift
+:100644 100644 77981f4... 9e33c46... M	Sources/Commit/CommitMetadata.swift
+:000000 100644 0000000... fd1fbc0... A	Sources/Git/Git.swift
+:000000 100644 0000000... f3ced94... A	UnitTests/GitTests.swift
+16	0	Git2Json.xcodeproj/project.pbxproj
+7	4	Sources/Commit/Commit.swift
+18	1	Sources/Commit/CommitMetadata.swift
+9	0	Sources/Git/Git.swift
+13	0	UnitTests/GitTests.swift

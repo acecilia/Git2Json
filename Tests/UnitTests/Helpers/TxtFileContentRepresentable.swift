@@ -1,10 +1,9 @@
 import Foundation
 
 protocol TxtFileContentRepresentable {
-    var referencePath: String { get }
+    static var directory: URL { get }
     var txtFilePath: URL { get }
     var fileContent: String { get }
-    func updateFileContent()
 }
 
 extension TxtFileContentRepresentable {

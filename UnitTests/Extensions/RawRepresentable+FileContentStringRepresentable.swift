@@ -1,11 +1,11 @@
 import Foundation
 
 extension TxtFileContentRepresentable where Self: RawRepresentable, Self.RawValue == String {
-    var fileContent: String {
-        var path = URL(fileURLWithPath: self.path)
-        path.deleteLastPathComponent()
-        path.appendPathComponent(rawValue)
-        path.appendPathExtension("txt")
-        return try! String(contentsOf: path)
+    var txtFilePath: URL {
+        var fileContentPath = URL(fileURLWithPath: referencePath)
+        fileContentPath.deleteLastPathComponent()
+        fileContentPath.appendPathComponent(rawValue)
+        fileContentPath.appendPathExtension("txt")
+        return fileContentPath
     }
 }

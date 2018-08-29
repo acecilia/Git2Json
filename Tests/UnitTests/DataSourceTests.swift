@@ -17,18 +17,11 @@ class DataSourceTests: XCTestCase {
                 command = ["git --no-pager log", Git.logOptions, "fe749215d7d9a038e18ecde588d3c859374caa99", "-1", "| sed '1d'"]
             case .commitListWithOneCommit:
                 command = ["git --no-pager log", Git.logOptions, "fe749215d7d9a038e18ecde588d3c859374caa99", "-1"]
+            case .commitListWithThreeCommits:
+                command = ["git --no-pager log", Git.logOptions, "fe749215d7d9a038e18ecde588d3c859374caa99", "-3"]
 
-            default:
+            case .changelog, .changelogWithNumstatBeforeRaw, .changelogWithRawMixedWithNumstat:
                 command = []
-                /*
-                 case .changelog: <#code#>
-                 case .changelogWithNumstatBeforeRaw: <#code#>
-                 case .changelogWithRawMixedWithNumstat: <#code#>
-
-                 case .commit: <#code#>
-                 case .commitListWithOneCommit: <#code#>
-                 case .commitListWithThreeCommits: <#code#>
-                 */
             }
 
             guard !command.isEmpty else {

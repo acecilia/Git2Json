@@ -1,51 +1,65 @@
 ---
 {
-"hash":"3995ff9acfb25812ca4ad9b835d457e2e1cbe75e",
-"authorName":"Theophane RUPIN",
-"subject":"Added Weaver to the list of projects using Stencil"
+  "authorName" : "Andrés Cecilia Luque",
+  "hash" : "fe749215d7d9a038e18ecde588d3c859374caa99",
+  "subject" : "Added git command generator"
 }
 ###
 
 
-:100644 100644 290ccce... 75ce68b... M  README.md
-2       1       README.md
+:100644 100644 5095e5d... 808c679... M	Git2Json.xcodeproj/project.pbxproj
+:100644 100644 7bab5c2... 237f3d5... M	Sources/Commit/Commit.swift
+:100644 100644 77981f4... 9e33c46... M	Sources/Commit/CommitMetadata.swift
+:000000 100644 0000000... fd1fbc0... A	Sources/Git/Git.swift
+:000000 100644 0000000... f3ced94... A	UnitTests/GitTests.swift
+16	0	Git2Json.xcodeproj/project.pbxproj
+7	4	Sources/Commit/Commit.swift
+18	1	Sources/Commit/CommitMetadata.swift
+9	0	Sources/Git/Git.swift
+13	0	UnitTests/GitTests.swift
 ---
 {
-"hash":"2e18892f4c02406a90cb96b2ebb1a2438c6655da",
-"authorName":"David Jennes",
-"subject":"Subscript syntax for Variables (#215)"
+  "authorName" : "Andrés Cecilia Luque",
+  "hash" : "edfea4493b04be500f5d0d566b4c7defeb9cd340",
+  "subject" : "Clean"
 }
 ###
 
 
-:100644 100644 5f009cb... 0bd445b... M  CHANGELOG.md
-:000000 100644 0000000... 445ef29... A  Sources/KeyPath.swift
-:100644 100644 b357021... 262ccb5... M  Sources/Variable.swift
-:100644 100644 3ca28cb... 7b386bc... M  Tests/StencilTests/VariableSpec.swift
-:100644 100644 1934abe... 147be45... M  docs/templates.rst
-7       3       CHANGELOG.md
-112     0       Sources/KeyPath.swift
-5       3       Sources/Variable.swift
-92      0       Tests/StencilTests/VariableSpec.swift
-18      0       docs/templates.rst
+:100644 100644 48d3c3f... d5cd2fc... M	Sources/Change/Change.swift
+:100644 100644 a3043d7... 9655574... M	Sources/Change/NumstatLine.swift
+:100644 100644 5a932c3... 1c42e16... M	Sources/Change/RawLine.swift
+:100644 100644 9d0217d... 77981f4... M	Sources/Commit/CommitMetadata.swift
+:100644 100644 420c19c... a083b38... M	Sources/Extensions/Collection+decode.swift
+:100644 100644 c409e9d... 0ee85d2... M	Sources/Extensions/Collection+safeSubscript.swift
+:100644 100644 3bcff2e... 8c52031... M	Sources/Extensions/String+split.swift
+:100644 100644 8b27f5c... 29957fa... M	UnitTests/CommitTests.swift
+:100644 100644 452a39b... f4374a4... M	UnitTests/DataSource/ValidMultipleChangeLogs.swift
+0	2	Sources/Change/Change.swift
+0	2	Sources/Change/NumstatLine.swift
+0	2	Sources/Change/RawLine.swift
+0	2	Sources/Commit/CommitMetadata.swift
+0	2	Sources/Extensions/Collection+decode.swift
+0	2	Sources/Extensions/Collection+safeSubscript.swift
+0	2	Sources/Extensions/String+split.swift
+1	0	UnitTests/CommitTests.swift
+21	21	UnitTests/DataSource/ValidMultipleChangeLogs.swift
 ---
 {
-"hash":"39ed9aa7536d71d28d78313a12e0df7a0d8f3777",
-"authorName":"Ilya Puchka",
-"subject":"Fixed using spaces in filter expressions and variables lists (#178)"
+  "authorName" : "Andrés Cecilia Luque",
+  "hash" : "e53cb2e543c00dcdb9608467d669c05104203947",
+  "subject" : "Clean"
 }
 ###
 
 
-:100644 100644 6c87fe7... 5f009cb... M  CHANGELOG.md
-:100644 100644 cb96657... 4d7eff2... M  Sources/ForTag.swift
-:100644 100644 81680f2... bb3320b... M  Sources/Tokenizer.swift
-:100644 100644 9563c89... b357021... M  Sources/Variable.swift
-:100644 100644 5224c12... f8de1b8... M  Tests/StencilTests/FilterSpec.swift
-:100644 100644 a8b90df... 4bb3fca... M  Tests/StencilTests/ForNodeSpec.swift
-6       0       CHANGELOG.md
-1       1       Sources/ForTag.swift
-17      2       Sources/Tokenizer.swift
-2       2       Sources/Variable.swift
-3       3       Tests/StencilTests/FilterSpec.swift
-3       3       Tests/StencilTests/ForNodeSpec.swift
+:100644 100644 47a6fee... 5095e5d... M	Git2Json.xcodeproj/project.pbxproj
+:100644 100644 9a4a940... 48d3c3f... M	Sources/Change/Change.swift
+:100644 100644 fed05e7... 46226b1... M	Sources/Change/ChangeStatus.swift
+:100644 000000 9768408... 0000000... D	Sources/Change/FileStatus.swift
+:100644 100644 32c24ae... 5a932c3... M	Sources/Change/RawLine.swift
+4	8	Git2Json.xcodeproj/project.pbxproj
+4	3	Sources/Change/Change.swift
+4	6	Sources/Change/ChangeStatus.swift
+0	5	Sources/Change/FileStatus.swift
+2	2	Sources/Change/RawLine.swift

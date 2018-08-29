@@ -5,7 +5,7 @@ import SwiftShell
 class DataSourceTests: XCTestCase {
     private let updateDataSource = false
 
-    func testValidDataSource() {
+    func testValidateDataSource() {
         var context = CustomContext(main)
         context.currentdirectory = UnitTestsDataSource.Valid.directory.path
 

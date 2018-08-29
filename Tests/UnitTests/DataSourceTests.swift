@@ -3,7 +3,7 @@ import SwiftShell
 @testable import Git2JsonCore
 
 class DataSourceTests: XCTestCase {
-    private let updateDataSource = true
+    private let updateDataSource = false
 
     func testValidDataSource() {
         var context = CustomContext(main)

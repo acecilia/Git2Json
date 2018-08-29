@@ -6,9 +6,9 @@ class CommitTests: XCTestCase {
     func testValidCommit() throws {
         let commit = try Commit(from: UnitTestsDataSource.Valid.commit.fileContent)
         XCTAssertEqual("Andrés Cecilia Luque", commit.metadata.authorName)
-        XCTAssertEqual("e855cc48203651a47c455ef4a623c360020458c6", commit.metadata.hash)
-        XCTAssertEqual("Initial Commit", commit.metadata.subject)
-        XCTAssertEqual(3, commit.changes.count)
+        XCTAssertEqual("fe749215d7d9a038e18ecde588d3c859374caa99", commit.metadata.hash)
+        XCTAssertEqual("Added git command generator", commit.metadata.subject)
+        XCTAssertEqual(5, commit.changes.count)
     }
 
     func testValidMultipleCommits() throws {

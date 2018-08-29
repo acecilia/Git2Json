@@ -13,8 +13,11 @@ class DataSourceTests: XCTestCase {
             let command: [String]
 
             switch element {
+            case .commit:
+                command = ["git --no-pager log", Git.logOptions, "fe749215d7d9a038e18ecde588d3c859374caa99", "-1", "| sed '1d'"]
             case .commitListWithOneCommit:
                 command = ["git --no-pager log", Git.logOptions, "fe749215d7d9a038e18ecde588d3c859374caa99", "-1"]
+
             default:
                 command = []
                 /*

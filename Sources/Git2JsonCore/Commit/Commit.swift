@@ -1,7 +1,10 @@
 import Foundation
 
 struct Commit: Codable {
-    let metadata: CommitMetadata
+    let authorName: String
+    let hash: String
+    let subject: String
+
     let changes: [Change]
 }
 
@@ -33,7 +36,10 @@ extension Commit {
         }
         let commitMetadata = commitSections[0]
         let data = Data(commitMetadata.utf8)
-        metadata = try JSONDecoder().decode(CommitMetadata.self, from: data)
+        let metadata = try JSONDecoder().decode(CommitMetadata.self, from: data)
+        authorName = metadata.authorName
+        hash = metadata.hash
+        subject = metadata.subject
 
         let commitChanges = commitSections[1]
         changes = try Change.decodeMultiple(from: commitChanges)

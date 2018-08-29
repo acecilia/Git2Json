@@ -3,18 +3,20 @@ import SwiftShell
 @testable import Git2JsonCore
 
 class DataSourceTests: XCTestCase {
+    private let updateDataSource = true
+
     func testValidDataSource() {
         var context = CustomContext(main)
         context.currentdirectory = UnitTestsDataSource.Valid.directory.path
 
         for element in UnitTestsDataSource.Valid.allCases {
+            let command: [String]
+
             switch element {
             case .commitListWithOneCommit:
-                let commands = ["git --no-pager log", Git.logOptions, "fe749215d7d9a038e18ecde588d3c859374caa99", "-1"]
-                let command = commands.joined(separator: " ")
-                let output = context.run(bash: command).stdout
-                try! output.write(to: element.txtFilePath, atomically: false, encoding: .utf8)
-            default: break
+                command = ["git --no-pager log", Git.logOptions, "fe749215d7d9a038e18ecde588d3c859374caa99", "-1"]
+            default:
+                command = []
                 /*
                  case .changelog: <#code#>
                  case .changelogWithNumstatBeforeRaw: <#code#>
@@ -25,7 +27,17 @@ class DataSourceTests: XCTestCase {
                  case .commitListWithThreeCommits: <#code#>
                  */
             }
-        }
 
+            guard !command.isEmpty else {
+                continue
+            }
+
+            let output = context.run(bash: command.joined(separator: " ")).stdout
+            if updateDataSource {
+                try! output.write(to: element.txtFilePath, atomically: false, encoding: .utf8)
+            }
+
+            XCTAssertEqual(output, element.fileContent)
+        }
     }
 }

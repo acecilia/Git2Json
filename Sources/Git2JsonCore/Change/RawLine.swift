@@ -8,7 +8,7 @@ struct RawLine: Codable {
     }
 
     init(_ string: String) throws {
-        let components = string.filteredComponents(separatedBy: " ")
+        let components = string.filteredComponents(separatedBy: .whitespaces)
         path = try components.decode(key: CodingKeys.path, at: CodingIndices.path)
         status = try components.decode(key: CodingKeys.status, at: CodingIndices.status, map: { ChangeStatus(rawValue: $0) })
     }

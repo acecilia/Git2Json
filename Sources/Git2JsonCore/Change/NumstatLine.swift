@@ -10,7 +10,7 @@ struct NumstatLine: Codable {
     }
 
     init(_ string: String) throws {
-        let components = string.filteredComponents(separatedBy: " ")
+        let components = string.filteredComponents(separatedBy: .whitespaces)
         path = try components.decode(key: CodingKeys.path, at: CodingIndices.path)
         additions = try components.decode(key: CodingKeys.additions, at: CodingIndices.additions, map: { Int($0) })
         deletions = try components.decode(key: CodingKeys.deletions, at: CodingIndices.deletions, map: { Int($0) })

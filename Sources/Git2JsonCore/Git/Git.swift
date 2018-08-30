@@ -17,7 +17,17 @@ extension Git {
 }
 
 extension Git {
+    public init() {
+        self.init(arguments: [])
+    }
+
     public init(from commit: String? = nil, commits: Int? = nil) {
+        self.init(
+            arguments: [commit, commits.map { "-\($0)" }]
+        )
+    }
+
+    public init(compareTo remoteBranch: String = "origin/master") {
         self.init(
             arguments: [commit, commits.map { "-\($0)" }]
         )

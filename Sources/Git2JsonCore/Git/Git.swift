@@ -29,7 +29,7 @@ extension Git {
 
     public init(compareTo remoteBranch: String = "origin/master") {
         self.init(
-            arguments: [commit, commits.map { "-\($0)" }]
+            arguments: []
         )
     }
 

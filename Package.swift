@@ -26,7 +26,6 @@ let package = Package(
             name: "UnitTests",
             dependencies: [
                 "Git2JsonCore",
-                "SwiftShell"
             ]
         )
     ]

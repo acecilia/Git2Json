@@ -7,8 +7,7 @@ extension UnitTestsDataSource {
         case commitListWithThreeCommits
 
         case changelog
-        case changelogWithNumstatBeforeRaw
-        case changelogWithRawMixedWithNumstat
+        case changelogWithRandomOrderedLines
 
         /// to be removed with Swift 4.2
         static let allCases: [UnitTestsDataSource.Valid] = [
@@ -17,8 +16,7 @@ extension UnitTestsDataSource {
             commitListWithThreeCommits,
 
             changelog,
-            changelogWithNumstatBeforeRaw,
-            changelogWithRawMixedWithNumstat
+            changelogWithRandomOrderedLines
         ]
 
         static var directory: URL {

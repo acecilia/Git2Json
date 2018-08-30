@@ -2,33 +2,39 @@ import Foundation
 import SwiftShell
 
 struct Git {
-    let command: String
+    var command: String
 
     private init(arguments: [String?]) {
         let command = [Git.baseCommand] + arguments
         self.command = command.compactMap { $0 }.joined(separator: " ")
     }
-
-    func run(directory: URL = URL(fileURLWithPath: #file).deletingLastPathComponent()) throws -> [Commit] {
-        var context = CustomContext(main)
-        context.currentdirectory = directory.path
-
-        let output = context.run(bash: command).stdout
-        return try Commit.decodeMultiple(from: output)
-    }
 }
 
 extension Git {
-    static var baseCommand: String {
+    private static var baseCommand: String {
         return "git --no-pager log --raw --numstat --pretty='\(Commit.gitPrettyFormat)'"
     }
 }
 
 extension Git {
-    init(from commit: String? = nil, commits: Int? = nil) {
+    public init(from commit: String? = nil, commits: Int? = nil) {
         self.init(
             arguments: [commit, commits.map { "-\($0)" }]
         )
+    }
+
+    public func rawOutput(directory: URL = URL(fileURLWithPath: #file).deletingLastPathComponent()) -> String {
+        var context = CustomContext(main)
+        context.currentdirectory = directory.path
+        return context.run(bash: command).stdout
+    }
+
+    public func run(directory: URL = URL(fileURLWithPath: #file).deletingLastPathComponent()) throws -> [Commit] {
+        return try Commit.decodeMultiple(from: rawOutput(directory: directory))
+    }
+
+    public static func run(from log: String) throws -> [Commit] {
+        return try Commit.decodeMultiple(from: log)
     }
 }
 

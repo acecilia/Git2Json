@@ -1,43 +1,42 @@
 import XCTest
-import SwiftShell
 @testable import Git2JsonCore
 
 class DataSourceTests: XCTestCase {
     private let updateDataSource = false
 
     func testValidateDataSource() {
-        var context = CustomContext(main)
-        context.currentdirectory = UnitTestsDataSource.Valid.directory.path
-
         for element in UnitTestsDataSource.Valid.allCases {
-            let command: String
+            let generatedFileContent: String
 
             switch element {
             case .commit:
-                command = [
-                    Git(from: "fe749215d7d9a038e18ecde588d3c859374caa99", commits: 1).command,
-                    "|",
-                    "sed '1d'"
-                ].joined(separator: " ")
+                var git = Git(from: "fe749215d7d9a038e18ecde588d3c859374caa99", commits: 1)
+                git.command += "| sed '1d'" // Remove first line
+                generatedFileContent = git.rawOutput()
+
             case .commitListWithOneCommit:
-                command = Git(from: "fe749215d7d9a038e18ecde588d3c859374caa99", commits: 1).command
+                generatedFileContent = Git(from: "fe749215d7d9a038e18ecde588d3c859374caa99", commits: 1).rawOutput()
+
             case .commitListWithThreeCommits:
-                command = Git(from: "fe749215d7d9a038e18ecde588d3c859374caa99", commits: 3).command
+                generatedFileContent = Git(from: "fe749215d7d9a038e18ecde588d3c859374caa99", commits: 3).rawOutput()
 
-            case .changelog, .changelogWithNumstatBeforeRaw, .changelogWithRawMixedWithNumstat:
-                command = ""
+            case .changelog:
+                var git = Git()
+                git.command = "git --no-pager log --raw --numstat --pretty='' fe749215d7d9a038e18ecde588d3c859374caa99 -1"
+                generatedFileContent = git.rawOutput()
+
+            case .changelogWithRandomOrderedLines:
+                let log = UnitTestsDataSource.Valid.changelog.fileContent
+                let lines = log.filteredComponents(separatedBy: "\n")
+                let randomOrderedLines = lines.sorted { $0.hash > $1.hash }
+                generatedFileContent = randomOrderedLines.joined(separator: "\n")
             }
 
-            guard !command.isEmpty else {
-                continue
-            }
-
-            let output = context.run(bash: command).stdout
             if updateDataSource {
-                try! output.write(to: element.txtFilePath, atomically: false, encoding: .utf8)
+                try! generatedFileContent.write(to: element.txtFilePath, atomically: false, encoding: .utf8)
             }
 
-            XCTAssertEqual(output, element.fileContent)
+            XCTAssertEqual(generatedFileContent, element.fileContent)
         }
     }
 }

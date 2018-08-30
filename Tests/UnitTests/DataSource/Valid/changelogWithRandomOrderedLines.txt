@@ -1,0 +1,10 @@
+7	4	Sources/Commit/Commit.swift
+16	0	Git2Json.xcodeproj/project.pbxproj
+:100644 100644 5095e5d... 808c679... M	Git2Json.xcodeproj/project.pbxproj
+13	0	UnitTests/GitTests.swift
+18	1	Sources/Commit/CommitMetadata.swift
+:100644 100644 77981f4... 9e33c46... M	Sources/Commit/CommitMetadata.swift
+:100644 100644 7bab5c2... 237f3d5... M	Sources/Commit/Commit.swift
+:000000 100644 0000000... f3ced94... A	UnitTests/GitTests.swift
+:000000 100644 0000000... fd1fbc0... A	Sources/Git/Git.swift
+9	0	Sources/Git/Git.swift

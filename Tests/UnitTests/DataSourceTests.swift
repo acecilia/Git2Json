@@ -10,25 +10,29 @@ class DataSourceTests: XCTestCase {
         context.currentdirectory = UnitTestsDataSource.Valid.directory.path
 
         for element in UnitTestsDataSource.Valid.allCases {
-            let command: [String]
+            let command: String
 
             switch element {
             case .commit:
-                command = ["git --no-pager log", Git.logOptions, "fe749215d7d9a038e18ecde588d3c859374caa99", "-1", "|", "sed '1d'"]
+                command = [
+                    Git(from: "fe749215d7d9a038e18ecde588d3c859374caa99", commits: 1).command,
+                    "|",
+                    "sed '1d'"
+                ].joined(separator: " ")
             case .commitListWithOneCommit:
-                command = ["git --no-pager log", Git.logOptions, "fe749215d7d9a038e18ecde588d3c859374caa99", "-1"]
+                command = Git(from: "fe749215d7d9a038e18ecde588d3c859374caa99", commits: 1).command
             case .commitListWithThreeCommits:
-                command = ["git --no-pager log", Git.logOptions, "fe749215d7d9a038e18ecde588d3c859374caa99", "-3"]
+                command = Git(from: "fe749215d7d9a038e18ecde588d3c859374caa99", commits: 3).command
 
             case .changelog, .changelogWithNumstatBeforeRaw, .changelogWithRawMixedWithNumstat:
-                command = []
+                command = ""
             }
 
             guard !command.isEmpty else {
                 continue
             }
 
-            let output = context.run(bash: command.joined(separator: " ")).stdout
+            let output = context.run(bash: command).stdout
             if updateDataSource {
                 try! output.write(to: element.txtFilePath, atomically: false, encoding: .utf8)
             }

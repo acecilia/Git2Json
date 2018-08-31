@@ -2,41 +2,51 @@ import Foundation
 import SwiftShell
 
 struct Git {
-    var command: String
+    var cmd: String
 
-    private init(arguments: [String?]) {
-        let command = [Git.baseCommand] + arguments
-        self.command = command.compactMap { $0 }.joined(separator: " ")
+    private init(_ extraCmdComponents: [CmdComponent]) {
+        let cmdComponents = Git.baseCmdComponents + extraCmdComponents.compactMap { $0 }
+        self.cmd = cmdComponents.map { $0.description }.joined(separator: " ")
     }
 }
 
 extension Git {
-    private static var baseCommand: String {
-        return "git --no-pager log --raw --numstat --pretty='\(Commit.gitPrettyFormat)'"
+    private static var baseCmdComponents: [CmdComponent] {
+        return [.git, .noPager, .log, .raw, .numstat, .pretty(format: Commit.gitPrettyFormat)]
     }
 }
 
 extension Git {
     public init() {
-        self.init(arguments: [])
+        self.init([])
     }
 
-    public init(from commit: String? = nil, commits: Int? = nil) {
-        self.init(
-            arguments: [commit, commits.map { "-\($0)" }]
-        )
+    public static func list(commits: Int) -> Git {
+        return Git([.commitCount(commits)])
     }
 
-    public init(compareTo remoteBranch: String = "origin/master") {
-        self.init(
-            arguments: []
-        )
+    public static func list(from revision: String) -> Git {
+        return Git([.revision(revision)])
     }
 
+    public static func list(commits: Int, from revision: String) -> Git {
+        return Git([.commitCount(commits), .revision(revision)])
+    }
+
+    public static func compareWith(olderBranch: String) -> Git {
+        return Git([.revisionRange(older: olderBranch, newer: "HEAD")])
+    }
+
+    public static func customArgs(args: [String]) -> Git {
+        return Git(args.map { CmdComponent.custom($0) })
+    }
+}
+
+extension Git {
     public func rawOutput(directory: URL = URL(fileURLWithPath: #file).deletingLastPathComponent()) -> String {
         var context = CustomContext(main)
         context.currentdirectory = directory.path
-        return context.run(bash: command).stdout
+        return context.run(bash: cmd).stdout
     }
 
     public func run(directory: URL = URL(fileURLWithPath: #file).deletingLastPathComponent()) throws -> [Commit] {
@@ -45,14 +55,5 @@ extension Git {
 
     public static func run(from log: String) throws -> [Commit] {
         return try Commit.decodeMultiple(from: log)
-    }
-}
-
-private extension Optional {
-    func map<T>(transformation: (Wrapped) -> (T)) -> T? {
-        switch self {
-        case .none: return nil
-        case let .some(value): return transformation(value)
-        }
     }
 }

@@ -10,15 +10,15 @@ class DataSourceTests: XCTestCase {
 
             switch element {
             case .commit:
-                var git = Git.list(commits: 1, from: "fe749215d7d9a038e18ecde588d3c859374caa99")
+                var git = Git.listBefore("fe749215d7d9a038e18ecde588d3c859374caa99", commits: 1)
                 git.cmd += "| sed '1d'" // Remove first line
                 generatedFileContent = git.rawOutput()
 
             case .commitListWithOneCommit:
-                generatedFileContent = Git.list(commits: 1, from: "fe749215d7d9a038e18ecde588d3c859374caa99").rawOutput()
+                generatedFileContent = Git.listBefore("fe749215d7d9a038e18ecde588d3c859374caa99", commits: 1).rawOutput()
 
             case .commitListWithThreeCommits:
-                generatedFileContent = Git.list(commits: 3, from: "fe749215d7d9a038e18ecde588d3c859374caa99").rawOutput()
+                generatedFileContent = Git.listBefore("fe749215d7d9a038e18ecde588d3c859374caa99", commits: 3).rawOutput()
 
             case .changelog:
                 var git = Git()

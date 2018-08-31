@@ -21,20 +21,20 @@ extension Git {
         self.init([])
     }
 
-    public static func list(commits: Int) -> Git {
+    public static func list(_ commits: Int) -> Git {
         return Git([.commitCount(commits)])
     }
 
-    public static func list(from revision: String) -> Git {
+    public static func listBefore(_ revision: String) -> Git {
         return Git([.revision(revision)])
     }
 
-    public static func list(commits: Int, from revision: String) -> Git {
+    public static func listBefore(_ revision: String, commits: Int) -> Git {
         return Git([.commitCount(commits), .revision(revision)])
     }
 
-    public static func compareWith(olderBranch: String) -> Git {
-        return Git([.revisionRange(older: olderBranch, newer: "HEAD")])
+    public static func listAfter(_ revision: String) -> Git {
+        return Git([.revisionRange(older: revision, newer: "HEAD")])
     }
 
     public static func customArgs(args: [String]) -> Git {

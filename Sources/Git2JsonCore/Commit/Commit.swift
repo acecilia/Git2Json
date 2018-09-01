@@ -35,9 +35,8 @@ extension Commit {
             let context = DecodingError.Context(codingPath: [], debugDescription: "The commit string must be splitted in two by the separator string \"\(Commit.separator)\": the commit information and the commit changes. Failing string: \(string)")
             throw DecodingError.dataCorrupted(context)
         }
-        let commitMetadata = commitSections[0]
-        let data = Data(commitMetadata.utf8)
-        metadata = try JSONDecoder().decode(CommitMetadata.self, from: data)
+        let metadataString = commitSections[0]
+        metadata = try JSONDecoder().decode(CommitMetadata.self, from: Data(metadataString.utf8))
 
         let commitChanges = commitSections[1]
         changes = try Change.decodeMultiple(from: commitChanges)

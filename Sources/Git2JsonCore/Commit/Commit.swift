@@ -23,6 +23,8 @@ extension Commit {
         case hash, author, subject
     }
 
+    // MEH MEH
+    
     /// Decode a Commit object from a string, which is the output of the git command.
     ///
     /// - Parameters:

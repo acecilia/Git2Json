@@ -6,8 +6,12 @@ enum CmdComponent: CustomStringConvertible {
     case numstat
     case pretty(format: String)
     case revision(String)
-    case commitCount(Int)
-    case revisionRange(older: String, newer: String)
+
+    case logCommitCount(Int)
+    case logRevisionRange(source: String, target: String)
+
+    case diffRevisionRange(source: String, target: String)
+
     case custom(String)
 
     var description: String {
@@ -19,8 +23,12 @@ enum CmdComponent: CustomStringConvertible {
         case .numstat: return "--numstat"
         case let .pretty(format): return "--pretty='\(format)'"
         case let .revision(revision): return "\(revision)"
-        case let .commitCount(count): return "-\(count)"
-        case let .revisionRange(olderRevision, newerRevision): return "\(olderRevision)..\(newerRevision)"
+
+        case let .logCommitCount(count): return "-\(count)"
+        case let .logRevisionRange(source, target): return "$(git merge-base \(source) \(target))..\(source)"
+
+        case let .diffRevisionRange(source, target): return "$(git merge-base \(source) \(target)) \(source)"
+
         case let .custom(custom): return "\(custom)"
         }
     }

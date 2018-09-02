@@ -22,7 +22,7 @@ extension Git {
     }
 
     public static func list(_ commits: Int) -> Git {
-        return Git([.commitCount(commits)])
+        return Git([.logCommitCount(commits)])
     }
 
     public static func listBefore(_ revision: String) -> Git {
@@ -30,11 +30,11 @@ extension Git {
     }
 
     public static func listBefore(_ revision: String, commits: Int) -> Git {
-        return Git([.commitCount(commits), .revision(revision)])
+        return Git([.logCommitCount(commits), .revision(revision)])
     }
 
-    public static func listAfter(_ revision: String) -> Git {
-        return Git([.revisionRange(older: revision, newer: "HEAD")])
+    public static func listAgainstTarget(_ target: String) -> Git {
+        return Git([.logRevisionRange(source: "HEAD", target: target)])
     }
 
     public static func customArgs(args: [String]) -> Git {

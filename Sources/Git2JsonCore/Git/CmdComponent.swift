@@ -38,11 +38,13 @@ public enum LogCmdComponent: CustomStringConvertible {
 
 
 public enum DiffCmdComponent: CustomStringConvertible {
+    case revision(String)
     case against(target: String)
     case range(source: String, target: String)
 
     public var description: String {
         switch self {
+        case let .revision(revision): return "\(revision)"
         case let .against(target): return DiffCmdComponent.range(source: "HEAD", target: target).description
         case let .range(source, target): return "$(git merge-base \(source) \(target)) \(source)"
         }

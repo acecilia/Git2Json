@@ -21,9 +21,12 @@ class DataSourceTests: XCTestCase {
                 generatedFileContent = Git.log(.revision("fe749215d7d9a038e18ecde588d3c859374caa99"), .commitCount(3)).rawOutput()
 
             case .changelog:
-                var git = Git.log()
-                git.cmd = "git --no-pager log --raw --numstat --pretty='' fe749215d7d9a038e18ecde588d3c859374caa99 -1"
-                generatedFileContent = git.rawOutput()
+                generatedFileContent = Git.diff(
+                    .range(
+                        source: "fe749215d7d9a038e18ecde588d3c859374caa99",
+                        target: "edfea4493b04be500f5d0d566b4c7defeb9cd340"
+                    )
+                ).rawOutput()
 
             case .changelogWithRandomOrderedLines:
                 let log = UnitTestsDataSource.Valid.changelog.fileContent

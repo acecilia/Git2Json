@@ -32,6 +32,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		4126F3ED213EBEC7002C0AA8 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4126F3EC213EBEC7002C0AA8 /* Command.swift */; };
 		41623E092138C087006DF95B /* CommandWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41623E082138C087006DF95B /* CommandWord.swift */; };
 		OBJ_100 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* Array.swift */; };
 		OBJ_101 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* Process.swift */; };
@@ -99,6 +100,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4126F3EC213EBEC7002C0AA8 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		41623E082138C087006DF95B /* CommandWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandWord.swift; sourceTree = "<group>"; };
 		"Git2Json::Git2JsonCore::Product" /* Git2JsonCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Git2JsonCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Git2Json::UnitTests::Product" /* UnitTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_22 /* Git.swift */,
+				4126F3EC213EBEC7002C0AA8 /* Command.swift */,
 				41623E082138C087006DF95B /* CommandWord.swift */,
 			);
 			path = Git;
@@ -500,6 +503,7 @@
 				41623E092138C087006DF95B /* CommandWord.swift in Sources */,
 				OBJ_75 /* String+split.swift in Sources */,
 				OBJ_76 /* Git.swift in Sources */,
+				4126F3ED213EBEC7002C0AA8 /* Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

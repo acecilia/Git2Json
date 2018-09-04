@@ -1,6 +1,6 @@
 import Foundation
 
-struct Commit: Codable {
+public struct Commit: Codable {
     var authorName: String { return metadata.authorName }
     var hash: String { return metadata.hash }
     var subject: String { return metadata.subject }

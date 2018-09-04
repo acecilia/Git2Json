@@ -1,4 +1,4 @@
-struct Change: Codable {
+public struct Change: Codable {
     let path: String
     let status: ChangeStatus
     let additions: Int

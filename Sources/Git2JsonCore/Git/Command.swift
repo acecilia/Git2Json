@@ -1,7 +1,7 @@
 import Foundation
 import SwiftShell
 
-public struct Command<Result> {
+public struct Cmd<Result> {
     var cmd: String
 
     init(_ cmdComponents: [CustomStringConvertible]) {
@@ -9,7 +9,7 @@ public struct Command<Result> {
     }
 }
 
-extension Command {
+extension Cmd {
     public func rawOutput(directory: URL = URL(fileURLWithPath: #file).deletingLastPathComponent()) -> String {
         var context = CustomContext(main)
         context.currentdirectory = directory.path
@@ -17,7 +17,7 @@ extension Command {
     }
 }
 
-public extension Command where Result == [Commit] {
+public extension Cmd where Result == [Commit] {
     public func run(directory: URL = URL(fileURLWithPath: #file).deletingLastPathComponent()) throws -> Result {
         return try Commit.decodeMultiple(from: rawOutput(directory: directory))
     }
@@ -27,7 +27,7 @@ public extension Command where Result == [Commit] {
     }
 }
 
-public extension Command where Result == [Change] {
+public extension Cmd where Result == [Change] {
     public func run(directory: URL = URL(fileURLWithPath: #file).deletingLastPathComponent()) throws -> Result {
         return try Change.decodeMultiple(from: rawOutput(directory: directory))
     }

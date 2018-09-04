@@ -20,16 +20,16 @@ extension Git {
 }
 
 extension Git {
-    public static func log(_ arguments: LogCmdComponent...) -> Command<[Commit]> {
+    public static func log(_ arguments: LogCmdComponent...) -> Cmd<[Commit]> {
         var cmdComponents: [CustomStringConvertible] = baseLogCmdComponents
         cmdComponents.append(contentsOf: arguments)
-        return Command(cmdComponents)
+        return Cmd(cmdComponents)
     }
 
-    public static func diff(_ arguments: DiffCmdComponent...) -> Command<[Change]> {
+    public static func diff(_ arguments: DiffCmdComponent...) -> Cmd<[Change]> {
         var cmdComponents: [CustomStringConvertible] = baseDiffCmdComponents
         cmdComponents.append(contentsOf: arguments)
-        return Command(cmdComponents)
+        return Cmd(cmdComponents)
     }
 }
 

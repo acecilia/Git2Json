@@ -36,7 +36,7 @@ extension Commit {
             throw DecodingError.dataCorrupted(context)
         }
         let metadataString = commitSections[0]
-        metadata = try JSONDecoder().decode(CommitMetadata.self, from: Data(metadataString.utf8))
+        metadata = try CommitMetadata(fromJson: metadataString)
 
         let commitChanges = commitSections[1]
         changes = try Change.decodeMultiple(from: commitChanges)

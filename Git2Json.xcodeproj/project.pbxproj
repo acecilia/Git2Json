@@ -33,6 +33,7 @@
 
 /* Begin PBXBuildFile section */
 		4126F3ED213EBEC7002C0AA8 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4126F3EC213EBEC7002C0AA8 /* Command.swift */; };
+		414B9A56213EE8E300532FD5 /* ConvenienceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B9A55213EE8E300532FD5 /* ConvenienceAPI.swift */; };
 		41623E092138C087006DF95B /* CmdComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41623E082138C087006DF95B /* CmdComponent.swift */; };
 		OBJ_100 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* Array.swift */; };
 		OBJ_101 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* Process.swift */; };
@@ -101,6 +102,7 @@
 
 /* Begin PBXFileReference section */
 		4126F3EC213EBEC7002C0AA8 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		414B9A55213EE8E300532FD5 /* ConvenienceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenienceAPI.swift; sourceTree = "<group>"; };
 		41623E082138C087006DF95B /* CmdComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CmdComponent.swift; sourceTree = "<group>"; };
 		"Git2Json::Git2JsonCore::Product" /* Git2JsonCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Git2JsonCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Git2Json::UnitTests::Product" /* UnitTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		414B9A58213EE92E00532FD5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				414B9A55213EE8E300532FD5 /* ConvenienceAPI.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		OBJ_14 /* Commit */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +346,7 @@
 				OBJ_14 /* Commit */,
 				OBJ_17 /* Extensions */,
 				OBJ_21 /* Git */,
+				414B9A58213EE92E00532FD5 /* Helpers */,
 			);
 			name = Git2JsonCore;
 			path = Sources/Git2JsonCore;
@@ -502,6 +513,7 @@
 				OBJ_74 /* Collection+safeSubscript.swift in Sources */,
 				41623E092138C087006DF95B /* CmdComponent.swift in Sources */,
 				OBJ_75 /* String+split.swift in Sources */,
+				414B9A56213EE8E300532FD5 /* ConvenienceAPI.swift in Sources */,
 				OBJ_76 /* Git.swift in Sources */,
 				4126F3ED213EBEC7002C0AA8 /* Command.swift in Sources */,
 			);

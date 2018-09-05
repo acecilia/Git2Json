@@ -1,6 +1,7 @@
 ---
 {
   "authorName" : "Andrés Cecilia Luque",
+  "date" : "2018-08-25T16:44:20+02:00",
   "hash" : "fe749215d7d9a038e18ecde588d3c859374caa99",
   "subject" : "Added git command generator"
 }
@@ -20,6 +21,7 @@
 ---
 {
   "authorName" : "Andrés Cecilia Luque",
+  "date" : "2018-08-23T19:02:21+02:00",
   "hash" : "edfea4493b04be500f5d0d566b4c7defeb9cd340",
   "subject" : "Clean"
 }
@@ -47,6 +49,7 @@
 ---
 {
   "authorName" : "Andrés Cecilia Luque",
+  "date" : "2018-08-23T18:57:11+02:00",
   "hash" : "e53cb2e543c00dcdb9608467d669c05104203947",
   "subject" : "Clean"
 }

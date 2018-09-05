@@ -1,5 +1,6 @@
 {
   "authorName" : "Andrés Cecilia Luque",
+  "date" : "2018-08-25T16:44:20+02:00",
   "hash" : "fe749215d7d9a038e18ecde588d3c859374caa99",
   "subject" : "Added git command generator"
 }

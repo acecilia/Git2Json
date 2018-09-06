@@ -33,6 +33,12 @@ public extension Cmd where Result == [Change] {
         return try Change.decodeMultiple(from: rawOutput(directory: directory))
     }
 
+    public func run2(file: String = #file) throws -> Result {
+        let directory = URL(fileURLWithPath: file).deletingLastPathComponent()
+        print("DIRECT: " + directory.path)
+        return try Change.decodeMultiple(from: rawOutput(directory: directory))
+    }
+
     public static func run(from string: String) throws -> Result {
         return try Change.decodeMultiple(from: string)
     }

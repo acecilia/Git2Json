@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Git2Json/Git2Json.xcodeproj">
+      location = "group:Git2Json.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Danger/Danger.xcodeproj">

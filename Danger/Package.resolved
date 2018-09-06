@@ -3,10 +3,10 @@
     "pins": [
       {
         "package": "Git2Json",
-        "repositoryURL": "https://github.com/acecilia/Git2Json.git",
+        "repositoryURL": "/Users/andres/Git/Git2Json",
         "state": {
           "branch": "master",
-          "revision": "0909f3d6922d3f35279a79c2e68895b16867e517",
+          "revision": "43a540389d81f147757080d3bc76f16afdae2180",
           "version": null
         }
       },

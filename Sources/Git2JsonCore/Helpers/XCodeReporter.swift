@@ -5,10 +5,10 @@ public enum Severity: String {
     case error
 }
 
-struct Location: CustomStringConvertible {
-    let file: String?
-    let line: Int?
-    let character: Int?
+public struct Location: CustomStringConvertible {
+    public let file: String?
+    public let line: Int?
+    public let character: Int?
 
     init(file: String? = nil, line: Int? = nil, character: Int? = nil) {
         self.file = file
@@ -16,7 +16,7 @@ struct Location: CustomStringConvertible {
         self.character = character
     }
 
-    var description: String {
+    public var description: String {
         // Xcode likes warnings and errors in the following format:
         // {full_path_to_file}{:line}{:character}: {error,warning}: {content}
         let fileString: String = file ?? "<nopath>"
@@ -26,25 +26,42 @@ struct Location: CustomStringConvertible {
     }
 }
 
+public struct Violation: CustomStringConvertible {
+    public let severity: Severity
+    public let location: Location
+    public let message: String
+
+    public var description: String {
+        // Xcode likes warnings and errors in the following format:
+        // {full_path_to_file}{:line}{:character}: {error,warning}: {content}
+        return [
+            "\(location): ",
+            "\(severity.rawValue): ",
+            "\(message)"
+            ].joined()
+    }
+}
+
 public struct XcodeReporter {
+    public private(set) static var violations: [Violation] = []
+
     public static func print(
         _ severity: Severity,
         file: String? = nil,
         line: Int? = nil,
         character: Int? = nil,
-        _ message: String,
-        exitOnError: Bool = true
+        _ message: String
         ) {
         let location = Location(file: file, line: line, character: character)
-        let string = [
-            "\(location):",
-            "\(severity.rawValue):",
-            "\(message)"
-            ].joined(separator: " ")
-        Swift.print(string)
+        let violation = Violation(severity: severity, location: location, message: message)
+        violations.append(violation)
+        Swift.print(violation)
+    }
 
-        if exitOnError && severity == .error {
+    public static func finish(exitOnError: Bool = true) {
+        if exitOnError && violations.contains{ $0.severity == .error } {
             exit(1)
         }
+        exit(0)
     }
 }

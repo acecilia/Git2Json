@@ -32,7 +32,7 @@ public struct XcodeReporter {
         file: String? = nil,
         line: Int? = nil,
         character: Int? = nil,
-        message: String,
+        _ message: String,
         exitOnError: Bool = true
         ) {
         let location = Location(file: file, line: line, character: character)

@@ -18,7 +18,8 @@ extension Cmd {
 }
 
 public extension Cmd where Result == [Commit] {
-    public func run(directory: URL = URL(fileURLWithPath: #file).deletingLastPathComponent()) throws -> Result {
+    public func run(invokingFile: String = #file) throws -> Result {
+        let directory = URL(fileURLWithPath: invokingFile).deletingLastPathComponent()
         return try Commit.decodeMultiple(from: rawOutput(directory: directory))
     }
 
@@ -28,9 +29,8 @@ public extension Cmd where Result == [Commit] {
 }
 
 public extension Cmd where Result == [Change] {
-    public func run(directory: URL = URL(fileURLWithPath: #file).deletingLastPathComponent(), file: String = #file) throws -> Result {
-        print("DIRECT: " + directory.path)
-        print("DIRECT2: " + file)
+    public func run(invokingFile: String = #file) throws -> Result {
+        let directory = URL(fileURLWithPath: invokingFile).deletingLastPathComponent()
         return try Change.decodeMultiple(from: rawOutput(directory: directory))
     }
 

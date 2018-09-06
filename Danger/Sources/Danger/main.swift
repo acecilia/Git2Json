@@ -1,6 +1,7 @@
 import Foundation
 import Git2JsonCore
 
+// xcrun --sdk macosx swift run -C Danger -Xswiftc "-target" -Xswiftc "x86_64-apple-macosx10.13"
 let diff = try Git.diff(.against(target: "origin/master")).run()
 let gitAbsoluteTopLevel = Git.absoluteTopLevel.run()
 
@@ -12,7 +13,7 @@ XcodeReporter.print(.warning, file: "/Users/andres/Git/Git2Json/Sources/Git2Json
 // Changelog check
 let changelogFileName = "CHANGELOG.md"
 if !diff.modifiedFiles.contains{ $0 == changelogFileName } {
-    // XcodeReporter.print(.error, file: "\(gitAbsoluteTopLevel)/\(changelogFileName)", "Changes are made, but no changelog entry has been found")
+    XcodeReporter.print(.error, file: "\(gitAbsoluteTopLevel)/\(changelogFileName)", "Changes are made, but no changelog entry has been found")
 }
 
 XcodeReporter.finish()

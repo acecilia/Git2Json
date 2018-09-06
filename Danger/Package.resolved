@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Git2Json",
+        "repositoryURL": "https://github.com/acecilia/Git2Json.git",
+        "state": {
+          "branch": "master",
+          "revision": "c1932db9ad7d6a435845ef587fbee9af57ff679c",
+          "version": null
+        }
+      },
+      {
+        "package": "SwiftShell",
+        "repositoryURL": "https://github.com/kareman/SwiftShell",
+        "state": {
+          "branch": null,
+          "revision": "02c8ae6a5d829d28aaa9683129fc71f899beca3a",
+          "version": "4.1.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

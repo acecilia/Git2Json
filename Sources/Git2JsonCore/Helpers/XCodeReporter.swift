@@ -39,7 +39,7 @@ public struct XcodeReporter {
         let string = [
             "\(location):",
             "\(severity.rawValue):",
-            "(\(message))"
+            "\(message)"
             ].joined(separator: " ")
         Swift.print(string)
 

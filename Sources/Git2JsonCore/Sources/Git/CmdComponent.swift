@@ -6,6 +6,8 @@ enum CmdComponent: CustomStringConvertible {
     case raw
     case numstat
     case pretty(format: String)
+    case revParse
+    case showTopLevel
 
     var description: String {
         switch self {
@@ -16,6 +18,8 @@ enum CmdComponent: CustomStringConvertible {
         case .raw: return "--raw"
         case .numstat: return "--numstat"
         case let .pretty(format): return "--pretty='\(format)'"
+        case .revParse: return "rev-parse"
+        case .showTopLevel: return "--show-toplevel"
         }
     }
 }

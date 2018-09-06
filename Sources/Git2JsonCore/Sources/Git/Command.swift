@@ -10,7 +10,8 @@ public struct Cmd<Result> {
 }
 
 extension Cmd {
-    public func rawOutput(directory: URL = URL(fileURLWithPath: #file).deletingLastPathComponent()) -> String {
+    public func rawOutput(invokingFile: String = #file) -> String {
+        let directory = URL(fileURLWithPath: invokingFile).deletingLastPathComponent()
         var context = CustomContext(main)
         context.currentdirectory = directory.path
         return context.run(bash: cmd).stdout
@@ -19,8 +20,7 @@ extension Cmd {
 
 public extension Cmd where Result == [Commit] {
     public func run(invokingFile: String = #file) throws -> Result {
-        let directory = URL(fileURLWithPath: invokingFile).deletingLastPathComponent()
-        return try Commit.decodeMultiple(from: rawOutput(directory: directory))
+        return try Commit.decodeMultiple(from: rawOutput(invokingFile: invokingFile))
     }
 
     public static func run(from string: String) throws -> Result {
@@ -30,8 +30,7 @@ public extension Cmd where Result == [Commit] {
 
 public extension Cmd where Result == [Change] {
     public func run(invokingFile: String = #file) throws -> Result {
-        let directory = URL(fileURLWithPath: invokingFile).deletingLastPathComponent()
-        return try Change.decodeMultiple(from: rawOutput(directory: directory))
+        return try Change.decodeMultiple(from: rawOutput(invokingFile: invokingFile))
     }
 
     public static func run(from string: String) throws -> Result {

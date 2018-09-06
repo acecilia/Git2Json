@@ -25,6 +25,11 @@ extension Git {
         cmdComponents.append(contentsOf: arguments)
         return Cmd(cmdComponents)
     }
+
+    public static var absoluteTopLevel: Cmd<String> {
+        let cmdComponents: [CmdComponent] = [.git, .revParse, .showTopLevel]
+        return Cmd<String>(cmdComponents)
+    }
 }
 
 

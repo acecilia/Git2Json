@@ -18,6 +18,12 @@ extension Cmd {
     }
 }
 
+public extension Cmd where Result == String {
+    public func run(invokingFile: String = #file) -> Result {
+        return rawOutput(invokingFile: invokingFile)
+    }
+}
+
 public extension Cmd where Result == [Commit] {
     public func run(invokingFile: String = #file) throws -> Result {
         return try Commit.decodeMultiple(from: rawOutput(invokingFile: invokingFile))

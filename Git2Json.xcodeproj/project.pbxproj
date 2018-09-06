@@ -166,6 +166,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4109F0F92140AF4600820EFC /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* Change */,
+				OBJ_14 /* Commit */,
+				OBJ_21 /* Git */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		414B9A58213EE92E00532FD5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,10 +352,8 @@
 		OBJ_8 /* Git2JsonCore */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_9 /* Change */,
-				OBJ_14 /* Commit */,
+				4109F0F92140AF4600820EFC /* Sources */,
 				OBJ_17 /* Extensions */,
-				OBJ_21 /* Git */,
 				414B9A58213EE92E00532FD5 /* Helpers */,
 			);
 			name = Git2JsonCore;

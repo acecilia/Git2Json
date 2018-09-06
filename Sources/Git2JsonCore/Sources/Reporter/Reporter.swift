@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Script {
+public struct Reporter {
     public static var violations: [Violation] = []
 
     public static func print(

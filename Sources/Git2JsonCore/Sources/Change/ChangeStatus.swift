@@ -1,4 +1,4 @@
-enum ChangeStatus: String, Codable {
+public enum ChangeStatus: String, Codable {
     case addition = "A"
     case copy = "C"
     case deletion = "D"

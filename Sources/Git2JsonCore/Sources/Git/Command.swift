@@ -29,6 +29,7 @@ public extension Cmd where Result == [Commit] {
 
 public extension Cmd where Result == [Change] {
     public func run(directory: URL = URL(fileURLWithPath: #file).deletingLastPathComponent()) throws -> Result {
+        print("DIRECT: " + directory.path)
         return try Change.decodeMultiple(from: rawOutput(directory: directory))
     }
 

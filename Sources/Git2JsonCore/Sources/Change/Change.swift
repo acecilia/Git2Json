@@ -1,8 +1,8 @@
 public struct Change: Codable {
-    let path: String
-    let status: ChangeStatus
-    let additions: Int
-    let deletions: Int
+    public let path: String
+    public let status: ChangeStatus
+    public let additions: Int
+    public let deletions: Int
 }
 
 extension Change {

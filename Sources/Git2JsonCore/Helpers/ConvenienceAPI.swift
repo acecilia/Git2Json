@@ -29,3 +29,9 @@ extension ConvenienceAPI {
 extension Array: ConvenienceAPI where Element == Change {
     var changes: [Change] { return self }
 }
+
+/* Not possible as of Swift 4.2
+extension Array: ConvenienceAPI where Element == Commit {
+    var changes: [Change] { return self[0].changes }
+}
+*/

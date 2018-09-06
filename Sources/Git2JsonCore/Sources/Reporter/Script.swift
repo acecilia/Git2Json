@@ -18,8 +18,8 @@ public struct Script {
 
     public static func exit(failOnError: Bool = true) {
         if failOnError && violations.contains{ $0.severity == .error } {
-            exit(1)
+            Foundation.exit(1)
         }
-        exit(0)
+        Foundation.exit(0)
     }
 }

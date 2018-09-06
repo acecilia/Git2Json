@@ -16,3 +16,5 @@ Notes:
 	- `Security` in case of vulnerabilities.
 
 ## Unreleased
+
+- Initial release.

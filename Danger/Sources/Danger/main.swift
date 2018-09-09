@@ -1,5 +1,5 @@
 import Foundation
-import Git2JsonCore
+import Git2Json
 
 // xcrun --sdk macosx swift run -C Danger -Xswiftc "-target" -Xswiftc "x86_64-apple-macosx10.13"
 

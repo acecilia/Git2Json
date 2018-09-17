@@ -64,28 +64,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		411AE202214F32AD00DA9CEE /* PBXContainerItemProxy */ = {
+		411AE207214F365E00DA9CEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftShell::SwiftShell";
 			remoteInfo = SwiftShell;
 		};
-		411AE203214F32AD00DA9CEE /* PBXContainerItemProxy */ = {
+		411AE208214F365E00DA9CEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Git2Json::Git2Json";
 			remoteInfo = Git2Json;
 		};
-		411AE204214F32AD00DA9CEE /* PBXContainerItemProxy */ = {
+		411AE209214F365E00DA9CEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftShell::SwiftShell";
 			remoteInfo = SwiftShell;
 		};
-		411AE205214F32AD00DA9CEE /* PBXContainerItemProxy */ = {
+		411AE20A214F365E00DA9CEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -351,8 +351,8 @@
 		OBJ_65 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				"Git2Json::UnitTests::Product" /* UnitTests.xctest */,
 				"Git2Json::Git2Json::Product" /* Git2Json.framework */,
+				"Git2Json::UnitTests::Product" /* UnitTests.xctest */,
 				"SwiftShell::SwiftShell::Product" /* SwiftShell.framework */,
 			);
 			name = Products;
@@ -396,7 +396,7 @@
 			buildPhases = (
 				OBJ_73 /* Sources */,
 				OBJ_91 /* Frameworks */,
-				411AE206214F336400DA9CEE /* ShellScript */,
+				411AE20B214F368200DA9CEE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -501,7 +501,7 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		411AE206214F336400DA9CEE /* ShellScript */ = {
+		411AE20B214F368200DA9CEE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -595,22 +595,22 @@
 		OBJ_105 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Git2Json::UnitTests" /* UnitTests */;
-			targetProxy = 411AE205214F32AD00DA9CEE /* PBXContainerItemProxy */;
+			targetProxy = 411AE20A214F365E00DA9CEE /* PBXContainerItemProxy */;
 		};
 		OBJ_143 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Git2Json::Git2Json" /* Git2Json */;
-			targetProxy = 411AE203214F32AD00DA9CEE /* PBXContainerItemProxy */;
+			targetProxy = 411AE208214F365E00DA9CEE /* PBXContainerItemProxy */;
 		};
 		OBJ_144 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftShell::SwiftShell" /* SwiftShell */;
-			targetProxy = 411AE204214F32AD00DA9CEE /* PBXContainerItemProxy */;
+			targetProxy = 411AE209214F365E00DA9CEE /* PBXContainerItemProxy */;
 		};
 		OBJ_93 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftShell::SwiftShell" /* SwiftShell */;
-			targetProxy = 411AE202214F32AD00DA9CEE /* PBXContainerItemProxy */;
+			targetProxy = 411AE207214F365E00DA9CEE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

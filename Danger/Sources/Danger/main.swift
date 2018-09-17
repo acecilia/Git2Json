@@ -9,7 +9,7 @@ let diff = try Git.diff(.against(target: "origin/master")).run()
 for (index, change) in diff.enumerated() {
     Reporter.print(.warning, file: "\(change.path)", "index \(index), status: \(change.status)")
 }
-Reporter.print(.warning, file: "/Users/andres/Git/Git2Json/Sources/Git2JsonCore/Sources/Git/Git.swift", "Changes count: \(diff.count)")
+Reporter.print(.warning, file: "", "Changes count: \(diff.count)")
 
 // Changelog check
 let changelogFileName = "CHANGELOG.md"

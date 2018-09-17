@@ -11,14 +11,10 @@ for (index, change) in diff.enumerated() {
 }
 reporter.print(.warning, "Changes count: \(diff.count)")
 
-// {full_path_to_file}{:line}{:character}: {error,warning}: {content}
-print("/Users/andres/Git/Git2Json/Sources/Git2Json/Sources/Git/Git.swift:6:3: error: uu")
-
-
 // Changelog check
-let changelogFileName = "CHANGELOG.md"
-if !diff.modifiedFiles.contains{ $0.contains(changelogFileName) } {
-    reporter.print(.error, file: "\(changelogFileName)", "Changes are made, but no changelog entry has been found")
+let changelogFilePath = "CHANGELOG.md"
+if !diff.modifiedFiles.contains { $0.contains(changelogFilePath) } {
+    reporter.print(.error, file: changelogFilePath, "Changes are made, but no changelog entry has been found")
 }
 
 reporter.finish()

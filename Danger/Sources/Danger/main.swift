@@ -2,6 +2,7 @@ import Foundation
 import Git2Json
 
 // xcrun --sdk macosx swift run -C Danger -Xswiftc "-target" -Xswiftc "x86_64-apple-macosx10.13"
+// swift run -C Danger -Xswiftc "-target" -Xswiftc "x86_64-apple-macosx10.13"
 
 let diff = try Git.diff(.against(target: "origin/master")).run()
 let gitAbsoluteTopLevel = Git.absoluteTopLevel.run()

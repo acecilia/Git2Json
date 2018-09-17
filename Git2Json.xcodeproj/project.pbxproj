@@ -57,7 +57,7 @@
 		OBJ_85 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* Command.swift */; };
 		OBJ_86 /* Git.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Git.swift */; };
 		OBJ_87 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* Location.swift */; };
-		OBJ_88 /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* Reporter.swift */; };
+		OBJ_88 /* XcodeReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* XcodeReporter.swift */; };
 		OBJ_89 /* Severity.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Severity.swift */; };
 		OBJ_90 /* Violation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* Violation.swift */; };
 		OBJ_92 /* SwiftShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftShell::SwiftShell::Product" /* SwiftShell.framework */; };
@@ -111,7 +111,7 @@
 		OBJ_26 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		OBJ_27 /* Git.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Git.swift; sourceTree = "<group>"; };
 		OBJ_29 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		OBJ_30 /* Reporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reporter.swift; sourceTree = "<group>"; };
+		OBJ_30 /* XcodeReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeReporter.swift; sourceTree = "<group>"; };
 		OBJ_31 /* Severity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Severity.swift; sourceTree = "<group>"; };
 		OBJ_32 /* Violation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Violation.swift; sourceTree = "<group>"; };
 		OBJ_35 /* ChangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeTests.swift; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 				OBJ_16 /* Change */,
 				OBJ_21 /* Commit */,
 				OBJ_24 /* Git */,
-				OBJ_28 /* Reporter */,
+				OBJ_28 /* XcodeReporter */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -215,15 +215,15 @@
 			path = Git;
 			sourceTree = "<group>";
 		};
-		OBJ_28 /* Reporter */ = {
+		OBJ_28 /* XcodeReporter */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_29 /* Location.swift */,
-				OBJ_30 /* Reporter.swift */,
+				OBJ_30 /* XcodeReporter.swift */,
 				OBJ_31 /* Severity.swift */,
 				OBJ_32 /* Violation.swift */,
 			);
-			path = Reporter;
+			path = XcodeReporter;
 			sourceTree = "<group>";
 		};
 		OBJ_33 /* Tests */ = {
@@ -509,7 +509,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "swift run --package-path Danger -Xswiftc \"-target\" -Xswiftc \"x86_64-apple-macosx10.13\"";
+			shellScript = "#swift run --package-path Danger -Xswiftc \"-target\" -Xswiftc \"x86_64-apple-macosx10.13\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -572,7 +572,7 @@
 				OBJ_85 /* Command.swift in Sources */,
 				OBJ_86 /* Git.swift in Sources */,
 				OBJ_87 /* Location.swift in Sources */,
-				OBJ_88 /* Reporter.swift in Sources */,
+				OBJ_88 /* XcodeReporter.swift in Sources */,
 				OBJ_89 /* Severity.swift in Sources */,
 				OBJ_90 /* Violation.swift in Sources */,
 			);

@@ -30,12 +30,18 @@ public extension Cmd where Result == String {
 
 public extension Cmd where Result == [Commit] {
     public func run(invokingFile: String = #file) throws -> Result {
-        return try Commit.decodeMultiple(from: rawOutput(invokingFile: invokingFile), gitTopLevel: Git.topLevel.run())
+        return try Commit.decodeMultiple(
+            from: rawOutput(invokingFile: invokingFile),
+            gitTopLevel: Git.topLevel.run(invokingFile: invokingFile)
+        )
     }
 }
 
 public extension Cmd where Result == [Change] {
     public func run(invokingFile: String = #file) throws -> Result {
-        return try Change.decodeMultiple(from: rawOutput(invokingFile: invokingFile), gitTopLevel: Git.topLevel.run())
+        return try Change.decodeMultiple(
+            from: rawOutput(invokingFile: invokingFile),
+            gitTopLevel: Git.topLevel.run(invokingFile: invokingFile)
+        )
     }
 }

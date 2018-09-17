@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Git2Json::Git2Json"
-               BuildableName = "Git2Json.framework"
-               BlueprintName = "Git2Json"
+               BlueprintIdentifier = "Danger::Danger"
+               BuildableName = "Danger"
+               BlueprintName = "Danger"
                ReferencedContainer = "container:Danger.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,9 +42,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Danger::Danger"
-               BuildableName = "Danger"
-               BlueprintName = "Danger"
+               BlueprintIdentifier = "Git2Json::Git2Json"
+               BuildableName = "Git2Json.framework"
+               BlueprintName = "Git2Json"
                ReferencedContainer = "container:Danger.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

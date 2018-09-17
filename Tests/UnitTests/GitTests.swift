@@ -1,5 +1,5 @@
 import XCTest
-@testable import Git2JsonCore
+@testable import Git2Json
 
 class GitTests: XCTestCase {
 

@@ -1,27 +1,30 @@
 import XCTest
-@testable import Git2JsonCore
+@testable import Git2Json
 
 class DataSourceTests: XCTestCase {
     private let updateDataSource = false
 
-    func testValidateDataSource() {
+    func testValidateDataSource() throws {
         for element in UnitTestsDataSource.Valid.allCases {
             let generatedFileContent: String
 
             switch element {
+            case .topLevel:
+                generatedFileContent = try Git.topLevel.rawOutput()
+
             case .commit:
                 var git = Git.log(.revision("fe749215d7d9a038e18ecde588d3c859374caa99"), .commitCount(1))
                 git.cmd += "| sed '1d'" // Remove first line
-                generatedFileContent = git.rawOutput()
+                generatedFileContent = try git.rawOutput()
 
             case .commitListWithOneCommit:
-                generatedFileContent = Git.log(.revision("fe749215d7d9a038e18ecde588d3c859374caa99"), .commitCount(1)).rawOutput()
+                generatedFileContent = try Git.log(.revision("fe749215d7d9a038e18ecde588d3c859374caa99"), .commitCount(1)).rawOutput()
 
             case .commitListWithThreeCommits:
-                generatedFileContent = Git.log(.revision("fe749215d7d9a038e18ecde588d3c859374caa99"), .commitCount(3)).rawOutput()
+                generatedFileContent = try Git.log(.revision("fe749215d7d9a038e18ecde588d3c859374caa99"), .commitCount(3)).rawOutput()
 
             case .changelog:
-                generatedFileContent = Git.diff(
+                generatedFileContent = try Git.diff(
                     .range(
                         source: "fe749215d7d9a038e18ecde588d3c859374caa99",
                         target: "edfea4493b04be500f5d0d566b4c7defeb9cd340"

@@ -2,6 +2,8 @@ import Foundation
 
 extension UnitTestsDataSource {
     enum Valid: String, TxtFileContentRepresentable {
+        case topLevel
+
         case commit
         case commitListWithOneCommit
         case commitListWithThreeCommits
@@ -11,6 +13,8 @@ extension UnitTestsDataSource {
 
         /// to be removed with Swift 4.2
         static let allCases: [UnitTestsDataSource.Valid] = [
+            topLevel,
+            
             commit,
             commitListWithOneCommit,
             commitListWithThreeCommits,

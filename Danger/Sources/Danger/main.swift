@@ -1,5 +1,5 @@
 import Foundation
-import Git2Json
+import Git2Json // marathon:https://github.com/acecilia/Git2Json.git
 
 // xcrun --sdk macosx swift run -C Danger -Xswiftc "-target" -Xswiftc "x86_64-apple-macosx10.13"
 // swift run -C Danger -Xswiftc "-target" -Xswiftc "x86_64-apple-macosx10.13"

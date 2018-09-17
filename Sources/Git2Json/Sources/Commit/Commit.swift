@@ -29,7 +29,7 @@ extension Commit {
     ///   - string: The command output.
     ///   - sectionsSeparator: The string used as a separator for delimiting the commit information sections.
     /// - Throws: A decoding error.
-    init(from string: String, sectionsSeparator: String = Commit.sectionsSeparator) throws {
+    init(from string: String, gitTopLevel: String, sectionsSeparator: String = Commit.sectionsSeparator) throws {
         let commitSections = string.filteredComponents(separatedBy: sectionsSeparator)
         guard commitSections.count == 2 else {
             let context = DecodingError.Context(codingPath: [], debugDescription: "The commit string must be splitted in two by the separator string \"\(Commit.separator)\": the commit information and the commit changes. Failing string: \(string)")
@@ -39,13 +39,13 @@ extension Commit {
         metadata = try CommitMetadata(fromJson: metadataString)
 
         let commitChanges = commitSections[1]
-        changes = try Change.decodeMultiple(from: commitChanges)
+        changes = try Change.decodeMultiple(from: commitChanges, gitTopLevel: gitTopLevel)
     }
 }
 
 extension Commit {
-    static func decodeMultiple(from string: String, separator: String = Commit.separator) throws -> [Commit] {
+    static func decodeMultiple(from string: String, gitTopLevel: String, separator: String = Commit.separator) throws -> [Commit] {
         let commits = string.filteredComponents(separatedBy: separator)
-        return try commits.map { try Commit(from: $0) }
+        return try commits.map { try Commit(from: $0, gitTopLevel: gitTopLevel) }
     }
 }

@@ -17,4 +17,5 @@ Notes:
 
 ## Unreleased
 
+- Prefix the path of a change with the topLevel path of the git repository.
 - Initial release.

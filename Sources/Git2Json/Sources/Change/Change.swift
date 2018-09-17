@@ -16,7 +16,7 @@ extension Change {
     ///   - string: The string with the raw and numstat lines.
     /// - Returns: An array of successfully decoded changes.
     /// - Throws: A decoding error.
-    static func decodeMultiple(from string: String) throws -> [Change] {
+    static func decodeMultiple(from string: String, gitTopLevel: String) throws -> [Change] {
         let changeStrings = string.filteredComponents(separatedBy: "\n")
 
         let rawLines = changeStrings.compactMap { try? RawLine($0) }
@@ -24,7 +24,8 @@ extension Change {
 
         let changes: [Change] = rawLines.compactMap { rawLine in
             if let numstatLine = numstatLines.first(where: { $0.path == rawLine.path }) {
-                return Change(path: rawLine.path, status: rawLine.status, additions: numstatLine.additions, deletions: numstatLine.deletions)
+                let fullPath = gitTopLevel + "/" + rawLine.path
+                return Change(path: fullPath, status: rawLine.status, additions: numstatLine.additions, deletions: numstatLine.deletions)
             }
             return nil
         }

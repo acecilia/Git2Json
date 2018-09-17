@@ -3,6 +3,8 @@ import Foundation
 public class XcodeReporter {
     public var violations: [Violation] = []
 
+    public init() {}
+    
     public func error(
         file: String? = nil,
         line: Int? = nil,

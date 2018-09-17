@@ -509,7 +509,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#swift run --package-path Danger -Xswiftc \"-target\" -Xswiftc \"x86_64-apple-macosx10.13\"";
+			shellScript = "swift run --package-path Danger -Xswiftc \"-target\" -Xswiftc \"x86_64-apple-macosx10.13\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

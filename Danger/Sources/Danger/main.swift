@@ -14,7 +14,7 @@ reporter.warning("Changes count: \(diff.count)")
 // Changelog check
 let changelogFilePath = "CHANGELOG.md"
 if !diff.modifiedFiles.contains { $0.contains(changelogFilePath) } {
-    reporter.error(file: changelogFilePath, "Changes are made, but no changelog entry has been found")
+    reporter.error(file: changelogFilePath, "Changes are made, but no new changelog entry has been found")
 }
 
 reporter.finish()

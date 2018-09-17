@@ -7,9 +7,9 @@ import Git2Json // marathon:https://github.com/acecilia/Git2Json.git
 let diff = try Git.diff(.against(target: "origin/master")).run()
 
 for (index, change) in diff.enumerated() {
-    Reporter.print(.warning, file: "\(change.path)", "index \(index), status: \(change.status)")
+    reporter.print(.warning, file: "\(change.path)", "index \(index), status: \(change.status)")
 }
-Reporter.print(.warning, "Changes count: \(diff.count)")
+reporter.print(.warning, "Changes count: \(diff.count)")
 
 // {full_path_to_file}{:line}{:character}: {error,warning}: {content}
 print("/Users/andres/Git/Git2Json/Sources/Git2Json/Sources/Git/Git.swift:6:3: error: uu")
@@ -18,7 +18,7 @@ print("/Users/andres/Git/Git2Json/Sources/Git2Json/Sources/Git/Git.swift:6:3: er
 // Changelog check
 let changelogFileName = "CHANGELOG.md"
 if !diff.modifiedFiles.contains{ $0.contains(changelogFileName) } {
-    Reporter.print(.error, file: "\(changelogFileName)", "Changes are made, but no changelog entry has been found")
+    reporter.print(.error, file: "\(changelogFileName)", "Changes are made, but no changelog entry has been found")
 }
 
-Reporter.exit()
+reporter.finish()

@@ -64,28 +64,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		411AE207214F365E00DA9CEE /* PBXContainerItemProxy */ = {
+		411AE20C214F378000DA9CEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftShell::SwiftShell";
 			remoteInfo = SwiftShell;
 		};
-		411AE208214F365E00DA9CEE /* PBXContainerItemProxy */ = {
+		411AE20D214F378000DA9CEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Git2Json::Git2Json";
 			remoteInfo = Git2Json;
 		};
-		411AE209214F365E00DA9CEE /* PBXContainerItemProxy */ = {
+		411AE20E214F378000DA9CEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftShell::SwiftShell";
 			remoteInfo = SwiftShell;
 		};
-		411AE20A214F365E00DA9CEE /* PBXContainerItemProxy */ = {
+		411AE20F214F378100DA9CEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -352,8 +352,8 @@
 			isa = PBXGroup;
 			children = (
 				"Git2Json::Git2Json::Product" /* Git2Json.framework */,
-				"Git2Json::UnitTests::Product" /* UnitTests.xctest */,
 				"SwiftShell::SwiftShell::Product" /* SwiftShell.framework */,
+				"Git2Json::UnitTests::Product" /* UnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -396,7 +396,7 @@
 			buildPhases = (
 				OBJ_73 /* Sources */,
 				OBJ_91 /* Frameworks */,
-				411AE20B214F368200DA9CEE /* ShellScript */,
+				411AE210214F379900DA9CEE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -501,7 +501,7 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		411AE20B214F368200DA9CEE /* ShellScript */ = {
+		411AE210214F379900DA9CEE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -512,7 +512,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "xcrun --sdk macosx swift run -C Danger -Xswiftc \"-target\" -Xswiftc \"x86_64-apple-macosx10.13\"\n";
+			shellScript = "xcrun --sdk macosx swift run -C Danger -Xswiftc \"-target\" -Xswiftc \"x86_64-apple-macosx10.13\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -595,22 +595,22 @@
 		OBJ_105 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Git2Json::UnitTests" /* UnitTests */;
-			targetProxy = 411AE20A214F365E00DA9CEE /* PBXContainerItemProxy */;
+			targetProxy = 411AE20F214F378100DA9CEE /* PBXContainerItemProxy */;
 		};
 		OBJ_143 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Git2Json::Git2Json" /* Git2Json */;
-			targetProxy = 411AE208214F365E00DA9CEE /* PBXContainerItemProxy */;
+			targetProxy = 411AE20D214F378000DA9CEE /* PBXContainerItemProxy */;
 		};
 		OBJ_144 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftShell::SwiftShell" /* SwiftShell */;
-			targetProxy = 411AE209214F365E00DA9CEE /* PBXContainerItemProxy */;
+			targetProxy = 411AE20E214F378000DA9CEE /* PBXContainerItemProxy */;
 		};
 		OBJ_93 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftShell::SwiftShell" /* SwiftShell */;
-			targetProxy = 411AE207214F365E00DA9CEE /* PBXContainerItemProxy */;
+			targetProxy = 411AE20C214F378000DA9CEE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
